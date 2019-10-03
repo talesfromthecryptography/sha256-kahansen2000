@@ -120,7 +120,8 @@ void sha256_update(sha256_state *state, const uint8_t data[], int len)
 
 	for (i = 0; i < len; ++i) {
 		// Add data[i] to the buffer
-    
+    		buffer[i]=data[i]
+		
 		state->buffer_bytes_used++;
 		if (state->buffer_bytes_used == BUFFER_FULL) {
 			sha256_transform(state);
